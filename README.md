@@ -1,1 +1,1 @@
-# cats-dogs-app-min
+# Projeto reconhecimento de imagem
