@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificador Gato ou Cão</title>
+</head>
+<body>
+    <h2>Classificador Gato 🐱 ou Cão 🐶</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" capture="environment" required>
+        <button type="submit">Enviar imagem</button>
+    </form>
+
+    {% if image_path %}
+        <h3>Imagem enviada:</h3>
+        <img src="{{ image_path }}" width="300">
+    {% endif %}
+
+    {% if prediction %}
+        <h3>Resultado: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
