@@ -12,7 +12,9 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Carrega modelo TFLite
-interpreter = tflite.Interpreter(model_path="cats_vs_dogs_mobilenetv2.tflite")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "cats_vs_dogs_mobilenetv2.tflite")
+interpreter = tflite.Interpreter(model_path=MODEL_PATH)
+#interpreter = tflite.Interpreter(model_path="cats_vs_dogs_mobilenetv2.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
